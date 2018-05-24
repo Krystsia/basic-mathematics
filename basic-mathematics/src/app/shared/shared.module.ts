@@ -7,6 +7,14 @@ import { ChartComponent } from './chart/chart.component';
   imports: [
     CommonModule
   ],
-  declarations: [NavbarComponent, ChartComponent]
+  declarations: [
+    ChartComponent,
+    NavbarComponent,
+
+  ],
+  exports: [
+    ChartComponent,
+    NavbarComponent,
+  ],
 })
 export class SharedModule { }
