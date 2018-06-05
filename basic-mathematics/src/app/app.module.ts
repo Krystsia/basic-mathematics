@@ -5,6 +5,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {MatButtonModule} from "@angular/material";
 import {SharedModule} from "./shared/shared.module";
+import {HttpModule} from "@angular/http";
+import {NewsModule} from "./news/news.module";
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import {SharedModule} from "./shared/shared.module";
     BrowserModule,
     BrowserAnimationsModule,
     MatButtonModule,
+    HttpModule,
+    NewsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,11 @@
+<mat-grid-list cols="4" rowHeight="300px">
+  <mat-grid-tile
+    *ngFor="let article of articles; first as f, index as i"
+    [colspan]="f ? 3 : 1"
+    [rowspan]="(i===2) ? 2 : 1"
+  >
+    <h3>{{article.title}}</h3>
+    <p>{{article.description}}</p>
+    <img src="{{article.urlToImage}}" alt="#">
+  </mat-grid-tile>
+</mat-grid-list>

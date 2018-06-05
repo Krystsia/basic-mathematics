@@ -785,9 +785,9 @@ export class ChartComponent implements OnInit {
 
     let margin = {
         top: 20,
-        right: 120,
+        right: 20,
         bottom: 20,
-        left: 120
+        left: 80
       },
       width = 960 - margin.right - margin.left,
       height = 900 - margin.top - margin.bottom;
@@ -803,7 +803,7 @@ export class ChartComponent implements OnInit {
     this.svg = d3.select(this.elementRef.nativeElement).append("svg")
       .attr("width", width + margin.right + margin.left)
       .attr("height", height + margin.top + margin.bottom)
-      .style('background', 'white')
+      .classed('back', true)
       .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -846,7 +846,7 @@ export class ChartComponent implements OnInit {
         links = this.root.links();
 
     nodes.forEach(d => {
-      d.y = d.depth * 180;
+      d.y = d.depth * 200;
     });
 
     var node = this.svg.selectAll("g.node")
@@ -870,7 +870,7 @@ export class ChartComponent implements OnInit {
 
     nodeEnter.append("text")
       .attr("x", d => {
-        return d.children || d._children ? -10 : 10;
+        return d.children || d._children ? -15 : 15;
       })
       .attr("dy", ".35em")
       .attr("text-anchor", d => {
@@ -888,7 +888,7 @@ export class ChartComponent implements OnInit {
       });
 
     nodeUpdate.select("circle")
-      .attr("r", 4.5)
+      .attr("r", 8.5)
       .style("fill", d => {
         return d._children ? "lightsteelblue" : "#fff";
       });
